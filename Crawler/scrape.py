@@ -49,7 +49,8 @@ def parse(url, soup):
         return sc_table(url, soup)
     return sc_divs(url, soup)
 
-##for testing:
+'''
+#for testing:
 def main():
     urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
     site = requests.get(urls[0]).content
@@ -58,3 +59,4 @@ def main():
 
 if __name__=="__main__":
     main()
+'''
