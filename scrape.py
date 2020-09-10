@@ -28,13 +28,10 @@ def sc_table(url, soup):
     result = []
     repeat_check = []
     for td in tds:
-        content = td.text.strip().replace("\n", " ")
+        content = td.text.strip().replace("\n", "")
         if content in repeat_check:
             continue
         repeat_check.append([content])
-
-        if has_name(content) == 0:
-            continue
         
         tags = td.findAll("a", href=True)
         links = [tag["href"] for tag in tags]
@@ -55,7 +52,7 @@ def sc_divs(url, soup):
     result = []
     repeat_check = []
     for div in divs:
-        content = div.text.strip().replace("\n", " ")
+        content = div.text.strip().replace("\n", "")
         if content in repeat_check:
             continue
         repeat_check.append(content)
@@ -71,7 +68,7 @@ def sc_divs(url, soup):
                     links[i] = url + links[i]
 
         result.append([content, links])
-        
+
     #print(len(repeat_check),repeat_check)
     return result
 
@@ -90,14 +87,14 @@ def parse(url, soup):
 
 # if __name__=="__main__":
 #     result = main()
-#     print(len(result))
+#     # print(len(result))
 #     print(result)
-#     with open('new.txt','w') as f:
-#         for r in result:
-#             for rr in r:
-#                 for res in rr:
-#                     f.write(res)
-#                 f.write("\n")
-#             f.write("\n")
-#     f.close()
+#     # with open('new.txt','w') as f:
+#     #     for r in result:
+#     #         for rr in r:
+#     #             for res in rr:
+#     #                 f.write(res)
+#     #             f.write("\n")
+#     #         f.write("\n")
+#     # f.close()
 
