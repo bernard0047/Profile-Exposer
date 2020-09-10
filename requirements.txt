@@ -1,3 +1,7 @@
 bs4
 scrapy
 requests
+keras
+tensorflow
+spacy
+pickle
