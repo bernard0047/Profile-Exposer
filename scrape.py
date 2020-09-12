@@ -81,30 +81,30 @@ def sc_divs(url, soup):
     #print(len(repeat_check),repeat_check)
     return result
 
-def parse(url, soup):
+def parse_soup(url, soup):
     if sc_table(url, soup) is not 0:
         return sc_table(url, soup)
     return sc_divs(url, soup)
 
 
-#for testing:
-def main():
-    urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
-    url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
-    site = requests.get(url2).content
-    soup = BeautifulSoup(site,"html.parser")
-    return(parse(url2, soup))
+# #for testing:
+# def main():
+#     urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
+#     url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
+#     site = requests.get(url2).content
+#     soup = BeautifulSoup(site,"html.parser")
+#     return(parse_soup(url2, soup))
 
-if __name__=="__main__":
-    result = main()
-    print(len(result))
-    print(result)
-    # with open('new.txt','w') as f:
-    #     for r in result:
-    #         for rr in r:
-    #             for res in rr:
-    #                 f.write(res)
-    #             f.write("\n")
-    #         f.write("\n")
-    # f.close()
+# if __name__=="__main__":
+#     result = main()
+#     print(len(result))
+#     print(result)
+#     # with open('new.txt','w') as f:
+#     #     for r in result:
+#     #         for rr in r:
+#     #             for res in rr:
+#     #                 f.write(res)
+#     #             f.write("\n")
+#     #         f.write("\n")
+#     # f.close()
 
