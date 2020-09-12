@@ -1,7 +1,7 @@
 bs4
 scrapy
 requests
+spacy
+pickle5
 keras
 tensorflow
-spacy
-pickle
