@@ -23,9 +23,9 @@ with open('Crawler Intelligence/tokenizer.pb','rb') as f:
     tokenizer=pickle.load(f)
     
 #print("Loading from", OUTPUT_DIR)
-nlpN = spacy.load(OUTPUT1)
-nlpS = spacy.load(OUTPUT2)
-nlpM = spacy.load(OUTPUT3)
+nlp_Name = spacy.load(OUTPUT1)
+nlp_Pref = spacy.load(OUTPUT2)
+nlp_Min = spacy.load(OUTPUT3)
 def decode_sentiment(score):
     return 0 if score < 0.625 else 1
 def predict(text):
