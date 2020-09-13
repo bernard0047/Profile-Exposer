@@ -15,15 +15,17 @@ SEQUENCE_LENGTH = 300
 tokenizer=Tokenizer()
 OUTPUT1='NER Models/Name/content/Model'
 OUTPUT2='NER Models/Prefix/content/Model'
+OUTPUT3='NER Models/Position Held/Model'
 
 
 model=keras.models.load_model('Crawler Intelligence/crawler_intelligence.h5')
-with open('Crawler Intelligence/tokenizer.pkl','rb') as f:
+with open('Crawler Intelligence/tokenizer.pb','rb') as f:
     tokenizer=pickle.load(f)
     
 #print("Loading from", OUTPUT_DIR)
 nlpN = spacy.load(OUTPUT1)
 nlpS = spacy.load(OUTPUT2)
+nlpM = spacy.load(OUTPUT3)
 def decode_sentiment(score):
     return 0 if score < 0.625 else 1
 def predict(text):
