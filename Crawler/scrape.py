@@ -9,10 +9,43 @@ Author: https://github.com/bernard0047
 from bs4 import BeautifulSoup
 import requests
 from functions import *
+import pandas as pd
+
+Glob_Dict={'name':[],
+        'prefix':[],
+        'ministry':[],
+        'gender':[],
+        'links':[]}
+
+def returner(string):
+    doc = nlp_Name(string)
+    name=""
+    stop_words=['Shri','Smt','Smt.','Dr.','Dr','Mr','Mrs','Cabinet','Minister','Prime','Deputy','Ministry','of','Technology','Defence',
+                'Contact','Facebook','Account']
+    for count,ent in enumerate(doc.ents):
+        name+=ent.text+" "
+        if count==0:
+            break
+    ret_name=""
+    for words in name.split(" "):
+        if words not in stop_words:
+            ret_name+=words+" "
+
+    doc =nlp_Min(string)
+    ministry=""
+    for ent in doc.ents:
+        ministry+=ent.text+" "
+    
+    doc =nlp_Pref(string)
+    prefix=""
+    for ent in doc.ents:
+        prefix+=ent.text+" "
+
+    return ret_name,ministry,prefix
 
 def has_name(text):
-    doc = nlpN(text)
-    prefs = nlpS(text)
+    doc = nlp_Name(text)
+    prefs = nlp_Pref(text)
     count=0
     plist = []
     for pref in prefs.ents:
@@ -86,28 +119,34 @@ def parse_soup(url, soup):
         content =  sc_table(url, soup)
     else:
         content =  sc_divs(url, soup)
-    return content
+    for items in content:
+        ret_name,ministry,prefix=returner(items[0])
+        Glob_Dict['name'].append(ret_name)
+        Glob_Dict['prefix'].append(prefix)
+        Glob_Dict['ministry'].append(ministry)
+        Glob_Dict['links'].append(' '.join(items[1]))
 
 
 
-# #for testing:
-# def main():
-#     urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
-#     url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
-#     site = requests.get(url2).content
-#     soup = BeautifulSoup(site,"html.parser")
-#     return(parse_soup(url2, soup))
+#for testing:
+def main():
+    urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
+    url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
+    site = requests.get(urls[0]).content
+    soup = BeautifulSoup(site,"html.parser")
+    parse_soup(urls[0], soup)
 
-# if __name__=="__main__":
-#     result = main()
-#     print(len(result))
-#     print(result)
-#     # with open('new.txt','w') as f:
-#     #     for r in result:
-#     #         for rr in r:
-#     #             for res in rr:
-#     #                 f.write(res)
-#     #             f.write("\n")
-#     #         f.write("\n")
-#     # f.close()
+if __name__=="__main__":
+    main()
+    df = pd.DataFrame()
+    df['Prefix'] = Glob_Dict['prefix']
+    df['Name'] = Glob_Dict['name']
+    df['Ministry'] = Glob_Dict['ministry']
+    df['urls'] = Glob_Dict['links']
+    df.to_csv("submission.csv")
+    
+    # with open('test.csv', 'w') as f:
+    #     for key in Glob_Dict.keys():
+    #         f.write("%s,%s\n"%(key,Glob_Dict[key]))
+    # f.close()
 
