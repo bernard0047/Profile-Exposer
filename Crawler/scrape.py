@@ -83,8 +83,11 @@ def sc_divs(url, soup):
 
 def parse_soup(url, soup):
     if sc_table(url, soup) is not 0:
-        return sc_table(url, soup)
-    return sc_divs(url, soup)
+        content =  sc_table(url, soup)
+    else:
+        content =  sc_divs(url, soup)
+    return content
+
 
 
 # #for testing:
