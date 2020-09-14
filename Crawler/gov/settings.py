@@ -11,7 +11,10 @@ BOT_NAME = 'gov'
 
 SPIDER_MODULES = ['gov.spiders']
 NEWSPIDER_MODULE = 'gov.spiders'
-DEPTH_LIMIT = 3
+DEPTH_LIMIT = 10
+LOG_ENABLED = True
+CLOSESPIDER_TIMEOUT = 180
+LOG_LEVEL = 'CRITICAL'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'gov (+http://www.yourdomain.com)'
