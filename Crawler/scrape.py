@@ -128,25 +128,21 @@ def parse_soup(url, soup):
 
 
 
-#for testing:
-def main():
-    urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
-    url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
-    site = requests.get(urls[0]).content
-    soup = BeautifulSoup(site,"html.parser")
-    parse_soup(urls[0], soup)
+# #for testing:
+# def main():
+#     urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
+#     url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
+#     site = requests.get(urls[0]).content
+#     soup = BeautifulSoup(site,"html.parser")
+#     parse_soup(urls[0], soup)
 
-if __name__=="__main__":
-    main()
-    df = pd.DataFrame()
-    df['Prefix'] = Glob_Dict['prefix']
-    df['Name'] = Glob_Dict['name']
-    df['Ministry'] = Glob_Dict['ministry']
-    df['urls'] = Glob_Dict['links']
-    df.to_csv("submission.csv")
+# if __name__=="__main__":
+#     main()
+#     # df = pd.DataFrame()
+#     # df['Prefix'] = Glob_Dict['prefix']
+#     # df['Name'] = Glob_Dict['name']
+#     # df['Ministry'] = Glob_Dict['ministry']
+#     # df['urls'] = Glob_Dict['links']
+#     # df.to_csv("submission.csv")
     
-    # with open('test.csv', 'w') as f:
-    #     for key in Glob_Dict.keys():
-    #         f.write("%s,%s\n"%(key,Glob_Dict[key]))
-    # f.close()
 
