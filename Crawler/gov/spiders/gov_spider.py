@@ -35,7 +35,7 @@ class govSpider(scrapy.Spider):
         f.close()
         
         soup = BeautifulSoup(response.text, 'html.parser')
-        scrape.parse_soup(soup)
+        scrape.parse_soup(response.url,soup.body)
 
         for href in soup.find_all('a'):
             try:
