@@ -42,7 +42,7 @@ def returner(string):
     for ent in doc.ents:
         prefix+=ent.text+" "
 
-    return ret_name,ministry,prefix
+    return prefix, ret_name, ministry
 
 def has_name(text):
     doc = nlp_Name(text)
@@ -123,7 +123,7 @@ def parse_soup(url, soup):
         content =  sc_divs(url, soup)
     for items in content:
         prefix,ret_name,ministry=returner(items[0])
-        l1 = [ret_name,ministry,prefix]
+        l1 = [prefix,ret_name,ministry]
         l1.append(' '.join(items[1]))
         print(l1)
         with open("trial.csv", 'a+', newline='') as write_obj:
