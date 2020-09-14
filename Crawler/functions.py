@@ -26,8 +26,6 @@ def pred(tag):
     #print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
     for ent in doc.ents:
         if ent.text!=0:
-            print(tag)
+            #print(tag)
             return 1
     return 0
-
-
