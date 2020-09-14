@@ -3,33 +3,31 @@ import os
 import spacy
 from pathlib import Path
 import time
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.models import Sequential
 import warnings
 import pandas as pd
-import pickle
 
-
-SEQUENCE_LENGTH = 300
-tokenizer=Tokenizer()
 OUTPUT1='NER Models/Name/content/Model'
 OUTPUT2='NER Models/Prefix/content/Model'
 OUTPUT3='NER Models/Position Held/Model'
+OUTPUT4='NER Models/Intelligence/Model'
 
-
-model=keras.models.load_model('Crawler Intelligence/crawler_intelligence.h5')
-with open('Crawler Intelligence/tokenizer.pb','rb') as f:
-    tokenizer=pickle.load(f)
     
-#print("Loading from", OUTPUT_DIR)
 nlp_Name = spacy.load(OUTPUT1)
 nlp_Pref = spacy.load(OUTPUT2)
 nlp_Min = spacy.load(OUTPUT3)
-def decode_sentiment(score):
-    return 0 if score < 0.625 else 1
-def predict(text):
-    x_test = pad_sequences(tokenizer.texts_to_sequences([text]), maxlen=SEQUENCE_LENGTH)
-    score = model.predict([x_test])[0]
-    return decode_sentiment(score)
+nlpIntel=spacy.load(OUTPUT4)
+
+
+def pred(tag):
+    tag = tag.strip()
+    if(tag.isnumeric()):
+        return 1
+    doc = nlpIntel(tag)
+    #print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
+    for ent in doc.ents:
+        if ent.text!=0:
+            print(tag)
+            return 1
+    return 0
+
 
