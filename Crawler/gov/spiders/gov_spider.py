@@ -2,14 +2,14 @@ import scrapy
 from bs4 import BeautifulSoup
 import re
 from urllib.parse import urlparse
+from functions import pred
+import scrape
 
 class govSpider(scrapy.Spider):
     name = "mygovscraper"
     allowed_domains = ["india.gov.in", "uaecabinet.ae","gov.za"]
     start_urls = [
         "https://www.india.gov.in",
-        "https://uaecabinet.ae/en/cabinet-members",
-        "https://www.gov.za/",
         ]
     def __init__(self, filename="starter_sites.txt", *args, **kwargs):
         super(govSpider, self).__init__(*args, **kwargs)
@@ -29,22 +29,27 @@ class govSpider(scrapy.Spider):
     
     def parse(self,response):
 
-        self.logger.info("Scraped %s", response.url)
+        # self.logger.info("Scraped %s", response.url)
         f = open('log.txt', 'a')
         f.write("Scraped {}\n".format(response.url))
         f.close()
         
         soup = BeautifulSoup(response.text, 'html.parser')
-        
+        scrape.parse_soup(soup)
+
         for href in soup.find_all('a'):
             try:
                 raw = href["href"]
+                tag = href.text
             except:
                 continue
-            # f2 = open("tags.txt", 'a', encoding='utf-8')
-            # f2.write(href.text)
-            # f2.write("\n")
-            # f2.close()
+
             if(raw[0]=='h' or raw[0]=='/'):
-                new = response.urljoin(raw)
-                yield scrapy.Request(new, self.parse)
+                if(pred(tag)):
+                    # print(tag)
+                    # f2 = open("tags.txt", 'a')
+                    # f2.write(tag)
+                    # f2.write("\n")
+                    # f2.close()    
+                    new = response.urljoin(raw)
+                    yield scrapy.Request(new, self.parse)
