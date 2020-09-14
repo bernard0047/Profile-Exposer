@@ -19,7 +19,9 @@ nlpIntel=spacy.load(OUTPUT4)
 
 
 def pred(tag):
-    tag = tag.strip()
+    tag = tag.strip().lower()
+    if "external website" in tag:
+        return 0
     if(tag.isnumeric()):
         return 1
     doc = nlpIntel(tag)
