@@ -23,4 +23,7 @@ The default running time for the crawler is 3 minutes. To run the crawler for a 
 
 Other specific settings to configure the crawler can be found on official scrapy documentation.
 
-
+### Post processing
+Navigate to directory `Crawler/`
+Run:
+	python postprocess.py
