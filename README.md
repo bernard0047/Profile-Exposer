@@ -10,7 +10,7 @@
 
 	pip install -r requirements.txt
 
-###Setting Up:
+### Setting Up:
 In directory `Crawler/NER Models/` go to each folder and select `Extract Here` for all 4 zip files.
 Setup complete.
 
@@ -19,7 +19,7 @@ Navigate to directory `Crawler/`
 To run the crawler with default settings, just use:
 	scrapy crawl mygovscraper
 The default running time for the crawler is 3 minutes. To run the crawler for a specific amount of time, use:
-	scrapy crawl mygovscraper -s CLOSESPIDER_TIMEOUT = &lt;time in secs&gt;
+	scrapy crawl mygovscraper -s CLOSESPIDER_TIMEOUT = &lt time in secs &gt 
 
 Other specific settings to configure the crawler can be found on official scrapy documentation.
 
