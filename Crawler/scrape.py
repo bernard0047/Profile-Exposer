@@ -46,17 +46,18 @@ def returner(string):
 def has_name(text):
     doc = nlp_Name(text)
     prefs = nlp_Pref(text)
-    count_n=0
-    count_p=0
+    names = []
     plist = []
     for pref in prefs.ents:
         plist.append(pref.text)
     for ent in doc.ents:
         if ent.label_=='PERSON':
-            count_n+=1
-    if len(plist)>0: #salutation is present
+            names.append(ent.text)
+    names = ' '.join(names).strip()
+    spaces = names.count(' ')
+    if len(plist)==1: #1 salutation is present
         return 1
-    if count_n in range(1,3): #max name intities from a single name <fn>+<ln>=2
+    if spaces<4:  #spaces max 2, for filtering
         return 1
     return 0
 
@@ -119,13 +120,16 @@ def parse_soup(url, soup):
     else:
         content =  sc_divs(url, soup)
     #return content
+    write_obj = open("trial1.csv", 'a+', newline='')
+    csv_writer = writer(write_obj)
     for items in content:
         prefix,ret_name,ministry=returner(items[0])
-        l1 = [prefix,ret_name,ministry]
-        l1.append(' '.join(items[1]))
-        with open("trial1.csv", 'a+', newline='') as write_obj:
-            csv_writer = writer(write_obj)
-            csv_writer.writerow(l1)
+        l1 = [prefix.strip(),ret_name.strip(),ministry.strip()]
+        if l1[1] == '' and l1[2] == '':
+            continue
+        l1.append(' '.join(items[1])) #urls
+        csv_writer.writerow(l1)
+    write_obj.close()
     # if count%5==0:
     #     df = pd.DataFrame()
     #     df['Prefix'] = Glob_Dict['prefix']
@@ -140,9 +144,9 @@ def parse_soup(url, soup):
 # def main():
 #     urls = ["https://www.india.gov.in/my-government/whos-who/council-ministers", "https://www.gov.za/about-government/leaders", "https://uaecabinet.ae/en/cabinet-members", "https://www.india.gov.in/my-government/whos-who/chiefs-armed-forces", "https://www.india.gov.in/my-government/indian-parliament/lok-sabha"]
 #     url2 = "https://www.india.gov.in/my-government/whos-who/chief-ministers"
-#     site = requests.get(urls[4]).content
+#     site = requests.get(urls[0]).content
 #     soup = BeautifulSoup(site,"html.parser")
-#     return(parse_soup(urls[4], soup.body))
+#     return(parse_soup(urls[0], soup.body))
     
 
 # if __name__=="__main__":
