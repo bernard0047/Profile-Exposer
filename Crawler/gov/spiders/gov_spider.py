@@ -7,7 +7,7 @@ import scrape
 
 class govSpider(scrapy.Spider):
     name = "mygovscraper"
-    allowed_domains = ["india.gov.in", "uaecabinet.ae","gov.za"]
+    allowed_domains = ["www.india.gov.in"]
     start_urls = [
         "https://www.india.gov.in",
         ]
@@ -52,4 +52,5 @@ class govSpider(scrapy.Spider):
                     # f2.write("\n")
                     # f2.close()    
                     new = response.urljoin(raw)
-                    yield scrapy.Request(new, self.parse)
+                    if(urlparse(new).netloc in self.allowed_domains):
+                        yield scrapy.Request(new, self.parse)
