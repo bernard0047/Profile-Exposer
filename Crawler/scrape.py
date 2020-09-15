@@ -1,6 +1,7 @@
 '''
 Returns list of lists of div/table text and related links after
 checking if name is present in text.
+Writes the list to csv
 Date Created:  09/09/2020
 Author: https://github.com/bernard0047
 '''
@@ -21,7 +22,7 @@ def returner(string):
     doc = nlp_Name(string)
     name=""
     stop_words=['Shri','Smt','Smt.','Dr.','Dr','Mr','Mrs','Cabinet','Minister','Prime','Deputy','Ministry','of','Technology','Defence',
-                'Contact','Facebook','Account']
+                'Contact','Facebook','Account'] #some very common stop-words
     for count,ent in enumerate(doc.ents):
         name+=ent.text+" "
         if count==0:
@@ -43,7 +44,7 @@ def returner(string):
 
     return prefix, ret_name, ministry
 
-def has_name(text):
+def has_name(text):  #  //cleaner fn
     doc = nlp_Name(text)
     prefs = nlp_Pref(text)
     names = []
@@ -57,7 +58,9 @@ def has_name(text):
     spaces = names.count(' ')
     if len(plist)==1: #1 salutation is present
         return 1
-    if spaces<4:  #spaces max 2, for filtering
+    if names.isnumeric(): #clean numeric preds manually
+        return 0
+    if spaces<6:  #spaces check for filtering
         return 1
     return 0
 
@@ -120,12 +123,14 @@ def parse_soup(url, soup):
     else:
         content =  sc_divs(url, soup)
     #return content
-    write_obj = open("trial1.csv", 'a+', newline='')
+    write_obj = open("india.csv", 'a+', newline='')
     csv_writer = writer(write_obj)
     for items in content:
         prefix,ret_name,ministry=returner(items[0])
         l1 = [prefix.strip(),ret_name.strip(),ministry.strip()]
-        if l1[1] == '' and l1[2] == '':
+        if l1[0] == '' and l1[1] == '': #no name no salutation //cleaner step
+            continue
+        if l1[1] in l1[2]:   #name found in ministry //cleaner step
             continue
         l1.append(' '.join(items[1])) #urls
         csv_writer.writerow(l1)
