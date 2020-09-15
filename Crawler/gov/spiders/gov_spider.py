@@ -7,10 +7,8 @@ import scrape
 
 class govSpider(scrapy.Spider):
     name = "mygovscraper"
-    allowed_domains = ["www.india.gov.in"]
-    start_urls = [
-        "https://www.india.gov.in",
-        ]
+    allowed_domains = []
+    start_urls = []
     def __init__(self, filename="starter_sites.txt", *args, **kwargs):
         super(govSpider, self).__init__(*args, **kwargs)
         
