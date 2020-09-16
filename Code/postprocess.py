@@ -1,6 +1,6 @@
 import pandas as pd
 import math
-df = pd.read_csv("india.csv",names=['pref','Name','Ministry','urls'],encoding= 'unicode_escape')
+df = pd.read_csv("database.csv",names=['pref','Name','Ministry','urls'],encoding= 'unicode_escape')
 
 print("Before cleaning: length =",len(df))
 
