@@ -48,4 +48,7 @@ Navigate to directory `Code/` and run in terminal:
 ### Important Notes
 1. After the crawler starts running, you can see the sites that are being crawled in `log.txt` file. Currently it has been emptied out.
 2. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled.
-3.  The database that we created was run for a total of 20 hours. 
+3.  The database that we created was run for a total of 20 hours.
+4.  Results on news article pages: 
+
+! [News](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
