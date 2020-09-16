@@ -51,4 +51,4 @@ Navigate to directory `Code/` and run in terminal:
 3.  The database that we created was run for a total of 20 hours.
 4.  Results on news article pages: 
 
-! [News](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
+![News](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
