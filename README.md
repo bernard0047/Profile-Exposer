@@ -5,7 +5,7 @@
 
 **Video Link:**
 >https://youtu.be/5m0k-aWA6L8
- #### 	KINDLY READ IMPORTANT NOTES AT THE END OF THIS README FILE.
+ #### 	KINDLY READ THE ENTIRE README FILE. IT CONTAINS SOME IMPORTANT INFERENCES
  ## Installing Dependencies
  
  Make sure to use `venv` for installing dependencies. Use the following line of code to install all the required dependencies in your created virtual environment. To make an env, run:
@@ -51,4 +51,14 @@ Navigate to directory `Code/` and run in terminal:
 3.  The database that we created was run for a total of 20 hours.
 4.  Results on news article pages: 
 
-! [News](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
+![Profile extracted from news article](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
+The above image is an example of a news article webpage from which Prefix, Name and Position held was correctly extracted. The scraper is not designed to extract profiles from huge paragraphs, yet we noticed some profiles being successfully extracted from news articles as well. 
+
+#### High Level Diagram of Solution:
+![HLD](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/HLDbw.png)
+
+#### Low Level Diagram of Scraper (universal):
+![LLD_scraper](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/LLDscraperbw.png)
+
+#### Low Level Diagram of Crawler:
+![LLD_crawler](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/LLD_crawlerbw.png) 
