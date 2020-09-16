@@ -12,11 +12,7 @@ import requests
 from functions import *
 import pandas as pd
 from csv import writer
-# Glob_Dict={'name':[],
-#         'prefix':[],
-#         'ministry':[],
-#         'gender':[],
-#         'links':[]}
+
 
 def returner(string):
     doc = nlp_Name(string)
@@ -123,7 +119,7 @@ def parse_soup(url, soup):
     else:
         content =  sc_divs(url, soup)
     #return content
-    write_obj = open("india.csv", 'a+', newline='')
+    write_obj = open("database.csv", 'a+', newline='')
     csv_writer = writer(write_obj)
     for items in content:
         prefix,ret_name,ministry=returner(items[0])
@@ -135,13 +131,6 @@ def parse_soup(url, soup):
         l1.append(' '.join(items[1])) #urls
         csv_writer.writerow(l1)
     write_obj.close()
-    # if count%5==0:
-    #     df = pd.DataFrame()
-    #     df['Prefix'] = Glob_Dict['prefix']
-    #     df['Name'] = Glob_Dict['name']
-    #     df['Ministry'] = Glob_Dict['ministry']
-    #     df['urls'] = Glob_Dict['links']
-    #     df.to_csv(f"trial{count}.csv")
 
 
 
@@ -157,11 +146,6 @@ def parse_soup(url, soup):
 # if __name__=="__main__":
 #     res = main()
 #     print(res)
-#     # df = pd.DataFrame()
-#     # df['Prefix'] = Glob_Dict['prefix']
-#     # df['Name'] = Glob_Dict['name']
-#     # df['Ministry'] = Glob_Dict['ministry']
-#     # df['urls'] = Glob_Dict['links']
-#     # df.to_csv("submission.csv")
+
     
 
