@@ -15,12 +15,12 @@ OUTPUT4='NER Models/Intelligence/Model'
 nlp_Name = spacy.load(OUTPUT1)
 nlp_Pref = spacy.load(OUTPUT2)
 nlp_Min = spacy.load(OUTPUT3)
-nlpIntel=spacy.load(OUTPUT4)
+nlpIntel = spacy.load(OUTPUT4)
 
 
 def pred(tag):
     tag = tag.strip().lower()
-    stop_words = ["external website", "schemes"]
+    stop_words = ["external website"]
     for sw in stop_words:
         if sw in tag:
             return 0
