@@ -1,7 +1,19 @@
-import pandas as pd 
-df = pd.read_csv("trial1.csv",names=['pref','Name','Ministry','urls'],encoding= 'unicode_escape')
+import pandas as pd
+import math
+
+df = pd.read_csv("india.csv",encoding= 'unicode_escape')
 print("Before cleaning: length =",len(df))
 
-df2 = df.drop_duplicates(subset=['Name'], keep=False)
-df2.to_csv("clean_t1.csv",index=False)
-print("After cleaning: length =",len(df2))
+df = df.drop_duplicates(subset=['name'], keep=False)
+
+counter=0
+for count,rows in enumerate(df['prefix']):
+    try:
+        if  pd.isnull(df['prefix'][count]) or pd.isnull(df['name'][count]) or df['name'][count].isnumeric()==True or df['prefix'][count].isnumeric()==True:
+            df.drop(count,axis=0,inplace=True)
+            counter+=1
+    except:
+        pass
+
+print("After cleaning: length =",len(df))
+df.to_csv("clean_database.csv",index=False)
