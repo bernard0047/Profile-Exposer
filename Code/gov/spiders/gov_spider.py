@@ -18,6 +18,7 @@ class govSpider(scrapy.Spider):
                     u = u.strip()
                     self.start_urls.append(u)
                     self.allowed_domains.append(urlparse(u).netloc)
+        print(f"Crawler has started crawling with {len(self.start_urls)} inital site(s). Please wait for timeout or press ctrl+c repeatedly to force stop.")
 
 
     def start_requests(self):    
