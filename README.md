@@ -51,10 +51,11 @@ New database will be created:
 > clean_database.csv
 
 ## Important Notes
-1. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
-2. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled. To do this, simply keep one site and delete the rest in the file `Code/starter_sites.txt`
-3.  The sample [database](https://github.com/bernard0047/Bicameral-Minds/blob/master/DATABASE/sample_database(57600s).csv) that we created was run for a total of 16 hours.
-4.  Results on news article pages: 
+1. It takes a long time to crawl. The crawler visits sites without following any order. It may happen that you would have to wait for some while before you start seeing meaningful websites appear in logs. For example, it took as long as 4 hours to crawl and parse just the main Indian government website domain (india.gov.in).
+2. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
+3. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled. To do this, simply keep one site and delete the rest in the file `Code/starter_sites.txt`
+4.  The sample [database](https://github.com/bernard0047/Bicameral-Minds/blob/master/DATABASE/sample_database(57600s).csv) that we created was run for a total of 16 hours. 
+5.  Results on news article pages: 
 
 ![Profile extracted from news article](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
 The above image is an example of a news article webpage from which Prefix, Name and Position held was correctly extracted. The scraper is not designed to extract profiles from huge paragraphs, yet we noticed a few profiles being successfully extracted from news articles as well. 
