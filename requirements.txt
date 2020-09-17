@@ -1,7 +1,6 @@
-bs4
-scrapy
-requests
-spacy
-pickle5
-keras
-tensorflow
+bs4==4.9.1
+scrapy==2.3.0
+requests==2.24.0
+spacy==2.2.0
+keras==2.3.0
+tensorflow==2.0.0
