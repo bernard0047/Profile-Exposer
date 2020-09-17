@@ -1,10 +1,10 @@
 import pandas as pd
 import math
-df = pd.read_csv("database.csv",names=['pref','Name','Ministry','urls'],encoding= 'unicode_escape')
+df = pd.read_csv("database.csv",names=['pref','name','ministry','urls'],encoding= 'unicode_escape')
 
 print("Before cleaning: length =",len(df))
 
-df = df.drop_duplicates(subset=['Name'], keep=False)
+df = df.drop_duplicates(subset=['name'], keep=False)
 
 counter=0
 for count,rows in enumerate(df['pref']):
