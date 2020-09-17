@@ -50,12 +50,13 @@ Navigate to directory `Code/` and run in terminal:
 New database will be created:
 > clean_database.csv
 
-## Important Notes
-1. It takes a long time to crawl. The crawler visits sites without following any order. It may happen that you would have to wait for some while before you start seeing meaningful websites appear in logs. For example, it took as long as 4 hours to crawl and parse just the main Indian government website domain (india.gov.in).
-2. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
-3. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled. To do this, simply keep one site and delete the rest in the file `Code/starter_sites.txt`
-4.  The sample [database](https://github.com/bernard0047/Bicameral-Minds/blob/master/DATABASE/sample_database(57600s).csv) that we created was run for a total of 16 hours. 
-5.  Results on news article pages: 
+## Important Notes: We humbly request you to consider these points before evaluating us.
+1. **The problem statement mentioned that 15 countries will be considered. Hence we used only 3 countries to train our NLP models(since training for 15 countries and then producing results on them would not make sense). But in the FAQs of the e-mail sent by MSC on 17-09-2020(for deadline extention), it was mentioned "Try to train with as many countries'  govt websites' HTML structures as possible". We trained with data for 3 countries and scaled it for 15, so we believe we can train for 15 countries and scale the solution to 70-80 countries. However making this update in under 4 days is not practically feasible.**
+2. It takes a long time to crawl. The crawler visits sites without following any order. It may happen that you would have to wait for some while before you start seeing meaningful websites appear in logs. For example, it took as long as 4 hours to crawl and parse just the main Indian government website domain (india.gov.in).
+3. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
+4. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled. To do this, simply keep one site and delete the rest in the file `Code/starter_sites.txt`
+5.  The sample [database](https://github.com/bernard0047/Bicameral-Minds/blob/master/DATABASE/sample_database(57600s).csv) that we created was run for a total of 16 hours. 
+6.  Results on news article pages: 
 
 ![Profile extracted from news article](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/news.jfif)
 The above image is an example of a news article webpage from which Prefix, Name and Position held was correctly extracted. The scraper is not designed to extract profiles from huge paragraphs, yet we noticed a few profiles being successfully extracted from news articles as well. 
