@@ -50,8 +50,8 @@ New database will be created:
 > clean_database.csv
 
 ## Important Notes
-1. After the crawler starts running, you can see the sites that are being crawled in `log.txt` file. Currently it has been emptied out.
-2. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled.
+1. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
+2. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process,** the crawler would take very long before you start seeing meaningful sites being crawled. To do this, simply keep one site and delete the rest in the file `Code/starter_sites.txt`
 3.  The database that we created was run for a total of 20 hours.
 4.  Results on news article pages: 
 
