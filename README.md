@@ -12,8 +12,8 @@
  
  Make sure to use `venv` for installing dependencies. Use the following line of code to install all the required dependencies in your created virtual environment. To make an env, run:
  
-	conda create --name myenv
-	conda activate myenv
+	python -m venv myenv
+	myenv\Scripts\activate.bat
 ###### Replace your environment name with myenv.
 Run the following in your terminal:
 
@@ -21,6 +21,7 @@ Run the following in your terminal:
 **Note:** If we missed any dependency, kindly pip install the library which was not found.
 
 ### Setting Up
+First navigate to `/Bicameral-Minds`, the repository you cloned.
 After installing the dependencies, navigate to directory `Code/NER Models/` go to each folder and select `Extract Here` for all 4 zip files.
 Setup complete.
 
