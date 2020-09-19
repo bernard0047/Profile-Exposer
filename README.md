@@ -50,8 +50,8 @@ Navigate to directory `Code/` and run in terminal:
 New database will be created:
 > clean_database.csv
 
-## Important Notes:
-1. **The problem statement mentioned that 15 countries will be considered. Hence we used only 3 countries to train our NLP models(since training for 15 countries and then producing results on them would not make sense). But in the FAQs of the e-mail sent by MSC on 17-09-2020(for deadline extention), it was mentioned "Try to train with as many countries'  govt websites' HTML structures as possible". We trained with data for 3 countries and scaled it for 15, so we believe we can train for 15 countries and scale the solution to 70-80 countries. However making this update in under 4 days is not practically feasible.**
+## Important Notes and Inferences:
+1. **The problem statement mentioned that 15 countries will be considered for the hackathon. Hence we used only 3 countries to train our NLP models(since training for 15 countries and then producing results on them would not make sense). But in the FAQs of the e-mail sent by MSC on 17-09-2020(for deadline extention), it was mentioned, "Try to train with as many countries'  govt websites' HTML structures as possible". We trained with data for 3 countries and scaled it for 15, hence we believe we can train for 15 countries and scale the solution to 70-80 countries. However, it was not feasible to carry out this upscaling in under 4 days.**
 2. The crawler visits all the sites, but without following any particular order. It may happen that you would have to wait for some while before you start seeing meaningful websites appear in logs.
 3. After the crawler starts running, you can see the sites that are being crawled in `Code/log.txt` file. Currently it has been emptied out.
 4. The sites which are to be crawled in are to be mentioned in `starter_sites.txt` currently, the file contains all 14 sites to be considered. We strongly advise that for testing purposes, try with only 1 site since **crawling govt sites is a very computationally costly process**.
