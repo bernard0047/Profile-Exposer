@@ -4,7 +4,7 @@
 2. Naman Tuli (101983040)
  #### 	KINDLY READ THE ENTIRE README FILE. IT CONTAINS SOME IMPORTANT INFERENCES.
 **Video Link:**
->https://youtu.be/5m0k-aWA6L8
+>https://youtu.be/96deQshdM6g
 ###### Kindly view the video in 720p or above.
 ### Presentation File [Here](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/Bicameral%20Minds.pdf).
 
