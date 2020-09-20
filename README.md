@@ -90,5 +90,11 @@ Now the setup is running and you can use `postman` to test your API. The paramet
 
 The API will be hosted on `http://localhost:3000/`\
 To get all records, use -  `http://localhost:3000/records`\
+
+![All](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/find_all.PNG) 
+
 To get details of a single person, use - \
 `http://localhost:3000/findrecord`  and pass parameter `name` as explained above and in the accompanying video.
+
+
+![All](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/find_Modi.PNG)
