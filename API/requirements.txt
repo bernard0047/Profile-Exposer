@@ -1,7 +1,0 @@
-use npm to install the following dependencies:
-
-express
-node
-body-parser
-mongoose
-nodemon
