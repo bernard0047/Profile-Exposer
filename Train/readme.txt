@@ -1,0 +1,2 @@
+This folder contains traindata used for NER training and the script used for training is training_pipeline.py.
+About the 4th model for names, we have used a pre-trained Spacy model and then further trained it for names of people having names of non english descent (eg. India), a sample training data is contained within the train_names.py  file.
