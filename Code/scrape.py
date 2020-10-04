@@ -12,7 +12,7 @@ import requests
 from functions import *
 import pandas as pd
 from csv import writer
-
+#Shashank Mishra_999 WRLD
 
 def returner(string):
     doc = nlp_Name(string)
