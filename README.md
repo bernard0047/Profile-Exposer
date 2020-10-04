@@ -1,5 +1,6 @@
 ## Team name: Bicameral Minds
 **Team members:**
+#jatin
 1. Avik Kuthiala  (101803116)
 2. Naman Tuli (101983040)
  #### 	KINDLY READ THE ENTIRE README FILE. IT CONTAINS SOME IMPORTANT INFERENCES.
