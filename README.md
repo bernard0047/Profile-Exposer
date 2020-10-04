@@ -9,7 +9,7 @@
 ### Presentation File [Here](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/Bicameral%20Minds.pdf).
 
  ## Installing Dependencies
- 
+ #all dependencies
  Make sure to use `venv` for installing dependencies. Use the following line of code to install all the required dependencies in your created virtual environment. To make an env, run:
  
 	python -m venv myenv
