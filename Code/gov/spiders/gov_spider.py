@@ -4,7 +4,7 @@ import re
 from urllib.parse import urlparse
 from functions import pred
 import scrape
-
+#govSpider
 class govSpider(scrapy.Spider):
     name = "mygovscraper"
     allowed_domains = []
