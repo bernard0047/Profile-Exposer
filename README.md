@@ -5,7 +5,6 @@
 2. Naman Tuli (101983040)
 ## Result
 > Position: 1st
-
 >Score: 60/100
 1. Raises bar:
      * Solves all aspects of the problem from crawler to demoable code using machine learning.
@@ -110,3 +109,4 @@ To get details of a single person, use - \
 
 
 ![All](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/find_Modi.PNG)
+# Ujjwal Singh
