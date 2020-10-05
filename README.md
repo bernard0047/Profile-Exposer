@@ -3,9 +3,11 @@
 1. Avik Kuthiala  (101803116)
 2. Naman Tuli (101983040)
  #### 	KINDLY READ THE ENTIRE README FILE. IT CONTAINS SOME IMPORTANT INFERENCES.
+ #Do watch this video
 **Video Link:**
 >https://youtu.be/96deQshdM6g
 ###### Kindly view the video in 720p or above.
+
 ### Presentation File [Here](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/Bicameral%20Minds.pdf).
 
  ## Installing Dependencies
@@ -15,6 +17,7 @@
 	python -m venv myenv
 	myenv\Scripts\activate.bat
 ###### Replace your environment name with myenv.
+
 Run the following in your terminal:
 
 	pip install -r requirements.txt
