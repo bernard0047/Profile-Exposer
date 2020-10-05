@@ -10,7 +10,7 @@
 1. Raises bar:
      * Solves all aspects of the problem from crawler to demoable code using machine learning.
 2. Meets bar:
-    * Solution is runnable
+    * Solution is runnable#harsimran
     * Solution is easy to install and easy to understand
     * Coding standards are taken care of
     * Solution easily able to scale to new countries
