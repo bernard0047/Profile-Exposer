@@ -1,13 +1,24 @@
+
 ## Team name: Bicameral Minds
 **Team members:**
 1. Avik Kuthiala  (101803116)
 2. Naman Tuli (101983040)
- #### 	KINDLY READ THE ENTIRE README FILE. IT CONTAINS SOME IMPORTANT INFERENCES.
+## Result
+> Position: 1st
+>Score: 60/100
+1. Raises bar:
+     * Solves all aspects of the problem from crawler to demoable code using machine learning.
+2. Meets bar:
+    * Solution is runnable
+    * Solution is easy to install and easy to understand
+    * Coding standards are taken care of
+    * Solution easily able to scale to new countries
+----------------------------------------------
 **Video Link:**
 >https://youtu.be/96deQshdM6g
 ###### Kindly view the video in 720p or above.
 ### Presentation File [Here](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/Bicameral%20Minds.pdf).
-
+----------------------------------------------
  ## Installing Dependencies
  
  Make sure to use `venv` for installing dependencies. Use the following line of code to install all the required dependencies in your created virtual environment. To make an env, run:
