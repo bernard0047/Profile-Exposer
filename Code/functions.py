@@ -1,3 +1,4 @@
+//providing the fuctions
 import keras
 import os
 import spacy
