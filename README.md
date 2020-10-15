@@ -1,8 +1,8 @@
 
 ## Team name: Bicameral Minds
 **Team members:**
-1. Avik Kuthiala  (101803116)
-2. Naman Tuli (101983040)
+1. Avik Kuthiala 
+2. Naman Tuli 
 ## Result
 > Position: 1st
 
