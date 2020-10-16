@@ -74,4 +74,3 @@ wasabi==0.8.0
 Werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.1.0
-zope.interface==5.1.0
