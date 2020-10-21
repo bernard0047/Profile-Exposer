@@ -1,6 +1,6 @@
 
 ## Team name: Bicameral Minds
-**Team members:**
+***Team members:***
 1. Avik Kuthiala  (101803116)
 2. Naman Tuli (101983040)
 ## Result
@@ -110,3 +110,5 @@ To get details of a single person, use - \
 
 
 ![All](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/find_Modi.PNG)
+
+##Ishaan Bhola
