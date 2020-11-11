@@ -5,7 +5,7 @@ from pathlib import Path
 import time
 import warnings
 import pandas as pd
-
+#py<3 hacktober2020
 OUTPUT1='NER Models/Name/content/Model'
 OUTPUT2='NER Models/Prefix/content/Model'
 OUTPUT3='NER Models/Position Held/Model'
