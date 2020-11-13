@@ -1,1 +1,7 @@
 __pycache__
+#Include My deatils
+#include<iostream>
+int main{
+cout<<("Hello World");
+return 0;
+}
