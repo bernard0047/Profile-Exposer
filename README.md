@@ -1,5 +1,6 @@
 
 ## Team name: Bicameral Minds
+# i Am here for hacktober fest 2020
 **Team members:**
 1. Avik Kuthiala  (101803116)
 2. Naman Tuli (101983040)
