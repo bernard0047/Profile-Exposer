@@ -83,7 +83,7 @@ The above image is an example of a news article webpage from which Prefix, Name 
 ![LLD_crawler](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/LLD_crawlerbw.png) 
 
 ### API
-The API has been built using node.js and express.js and functions by fetching data from a mongo.db database.\
+The API has been built using node.js and express.js and functions by fetching data from a mongodb database.\
 Ensure that you have a functioning mongo.db database setup before running the API on postman.
 
 Navigate to the `db_api` directory and install the required modules using npm:\
@@ -98,7 +98,7 @@ To import the csv database into mongo.db, run the following command -\
 Then make sure you are in `db_api/` and run the command - \
 `npm run start`
 
-Now the setup is running and you can use `postman` to test your API. The parameters need to be passed using `x-www-form-urlencode` to the `Body`.
+Now the setup is running and you can use `postman` to test your API. The parameters needs to be passed using `x-www-form-urlencode` to the `Body`.
 
 The API will be hosted on `http://localhost:3000/`\
 To get all records, use -  `http://localhost:3000/records`\
