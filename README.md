@@ -110,3 +110,7 @@ To get details of a single person, use - \
 
 
 ![All](https://github.com/bernard0047/Bicameral-Minds/blob/master/Design/find_Modi.PNG)
+
+
+
+#here to promote open source community #hactoberfest2020
